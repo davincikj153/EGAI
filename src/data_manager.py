@@ -28,7 +28,7 @@ class DataManager:
         os.makedirs(self.debug_html_dir, exist_ok=True)
         os.makedirs(self.vehicle_assets_dir, exist_ok=True)
 
-        # 초기 설계 메타데이터 컬럼 순서 정의 (누락된 값은 None으로 채우기 위함)
+        # 초기 설계 메타데이터 컬럼 순서 정의
         self.metadata_columns_order = [
             "audio_file_path", "data_label", "goodsNo", "vehicle_name",
             "first_registration_date", "year", "current_mileage_km",
@@ -39,8 +39,8 @@ class DataManager:
             "wiper_blades_changed", "washer_fluid_replenished",
             "warranty_remaining_km", "warranty_remaining_months",
             "my_car_damage_reported", "owner_changed", "liens_encumbrances_exist",
-            "overall_score", "mid_freq_score", "irregularity", "low_high_freq",
-            "regularity", "specific_anomaly", "jessino"  # jessino는 마지막에 추가
+            "overall_score", "mid_freq_score", "low_high_freq", "audible_range_score", # <-- 여기에 추가!
+            "regularity", "irregularity", "specific_anomaly", "jessino"
         ]
 
     def get_base_data_path(self) -> str:
